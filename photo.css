@@ -1,301 +1,501 @@
 /* ==================================================
    PHOTOGRAPHIES — ILONA
    ================================================== */
+
+
 /* ==================================================
    PAGE
    ================================================== */
+
 .photos-page {
+
   min-height: 100vh;
+
   padding:
     clamp(24px, 4vw, 60px)
     clamp(20px, 5vw, 70px);
+
   background: var(--background);
+
 }
+
+
 /* ==================================================
    HEADER
    ================================================== */
+
 .photos-header {
+
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+
+  grid-template-columns:
+    1fr auto 1fr;
+
   align-items: center;
+
   width: 100%;
+
   font-size: 10px;
+
   letter-spacing: 0.1em;
+
   text-transform: uppercase;
+
 }
+
+
 .photos-header .back {
+
   justify-self: start;
+
   color: var(--text);
+
   text-decoration: none;
+
   transition: opacity 0.2s ease;
+
 }
+
+
 .photos-header .back:hover {
+
   opacity: 0.5;
+
 }
+
+
 .header-title {
+
   justify-self: center;
+
   font-weight: 600;
+
 }
+
+
 .header-info {
+
   justify-self: end;
+
   color: var(--muted);
+
 }
+
+
 /* ==================================================
    INTRO
    ================================================== */
+
 .photos-intro {
+
   max-width: 900px;
+
   margin:
     clamp(100px, 16vh, 190px)
     auto
     clamp(100px, 15vh, 170px);
+
 }
+
+
 .eyebrow {
+
   margin-bottom: 20px;
+
   color: var(--muted);
+
   font-size: 10px;
+
   font-weight: 600;
+
   letter-spacing: 0.12em;
+
   text-transform: uppercase;
+
 }
+
+
 .photos-intro h1 {
-  font-size: clamp(58px, 10vw, 130px);
+
+  font-size:
+    clamp(58px, 10vw, 130px);
+
   font-weight: 400;
+
   line-height: 0.85;
+
   letter-spacing: -0.06em;
+
 }
+
+
 .intro-text {
+
   max-width: 500px;
+
   margin-top: 35px;
+
   color: var(--muted);
+
   font-size: 14px;
+
   line-height: 1.5;
+
 }
+
+
 /* ==================================================
-   ENTRÉES PHOTO
+   PHOTOS
    ================================================== */
-.photo-entry {
-  width: 100%;
-}
-/* ==================================================
-   PHOTO 1
-   ================================================== */
-.photo-entry-large {
-  width: 460px;
-  max-width: 60vw;
-  margin:
-    0 auto
-    150px;
-}
-/* ==================================================
-   VARIATIONS DE TAILLE
-   ================================================== */
+
+
 /*
-   On utilise ici les classes d'entrée directement.
-   Les photos ne prennent donc plus toute la largeur.
+   Chaque photo possède sa propre classe :
+   
+   .photo-01
+   .photo-02
+   .photo-03
+   .photo-04
+
+   Cela permet de contrôler leur taille
+   et leur position indépendamment.
 */
-.photo-entry:nth-of-type(1) {
-  width: 400px;
-  transform: translateX(-70px);
+
+
+.photo {
+
+  margin-bottom: 160px;
+
 }
-.photo-entry:nth-of-type(2) {
-  width: 500px;
-  transform: translateX(80px);
-}
-.photo-entry:nth-of-type(3) {
-  width: 370px;
-  transform: translateX(-100px);
-}
-.photo-entry:nth-of-type(4) {
-  width: 450px;
-  transform: translateX(50px);
-}
+
+
 /* ==================================================
-   IMAGE
+   PHOTO 01
    ================================================== */
-.entry-image {
+
+.photo-01 {
+
+  width: 390px;
+
+  max-width: 70vw;
+
+  margin-left: 14%;
+
+}
+
+
+/* ==================================================
+   PHOTO 02
+   ================================================== */
+
+.photo-02 {
+
+  width: 500px;
+
+  max-width: 70vw;
+
+  margin-left: auto;
+
+  margin-right: 12%;
+
+}
+
+
+/* ==================================================
+   PHOTO 03
+   ================================================== */
+
+.photo-03 {
+
+  width: 350px;
+
+  max-width: 65vw;
+
+  margin-left: 25%;
+
+}
+
+
+/* ==================================================
+   PHOTO 04
+   ================================================== */
+
+.photo-04 {
+
+  width: 520px;
+
+  max-width: 70vw;
+
+  margin-left: auto;
+
+  margin-right: 17%;
+
+}
+
+
+/* ==================================================
+   IMAGES
+   ================================================== */
+
+.photo-image {
+
   width: 100%;
+
   overflow: hidden;
+
   background:
     rgba(48, 39, 43, 0.08);
+
 }
-.photo-entry-large .entry-image {
-  aspect-ratio: 4 / 3;
-}
-.entry-image img {
+
+
+.photo-image img {
+
   width: 100%;
-  height: 100%;
+
+  height: auto;
+
   display: block;
+
   object-fit: cover;
+
   transition:
     transform 0.7s ease;
+
 }
-.entry-image:hover img {
+
+
+.photo-image:hover img {
+
   transform: scale(1.015);
+
 }
+
+
 /* ==================================================
    TEXTE
    ================================================== */
-.entry-text {
-  max-width: 400px;
+
+.photo-text {
+
+  max-width: 420px;
+
   margin-top: 16px;
+
 }
-.entry-text h2 {
-  margin: 0 0 7px;
+
+
+.photo-text h2 {
+
+  margin:
+    0 0 8px;
+
   font-size: 18px;
+
   font-weight: 400;
-  line-height: 1.2;
+
+  line-height: 1.25;
+
   letter-spacing: -0.02em;
+
 }
-.entry-text p {
+
+
+.photo-text p {
+
   margin: 0;
+
   color: var(--muted);
+
   font-size: 12px;
+
   line-height: 1.55;
+
 }
+
+
 /* ==================================================
-   PLUSIEURS PHOTOS
+   NOUVEL AN — 3 PHOTOS
    ================================================== */
-.entry-images {
+
+.photo-images {
+
   display: grid;
+
   grid-template-columns:
     repeat(3, 1fr);
-  gap: 12px;
+
+  gap: 10px;
+
   width: 100%;
+
 }
-.entry-images img {
+
+
+.photo-images img {
+
   width: 100%;
-  aspect-ratio: 1 / 1;
+
+  height: auto;
+
   display: block;
+
   object-fit: cover;
+
   background:
     rgba(48, 39, 43, 0.08);
+
   transition:
     transform 0.7s ease;
+
 }
-.entry-images img:hover {
+
+
+.photo-images img:hover {
+
   transform: scale(1.015);
+
 }
-/* ==================================================
-   DEUX PHOTOS
-   ================================================== */
-.entry-images.two {
-  grid-template-columns:
-    1fr 1fr;
-}
-/* ==================================================
-   DUO
-   ================================================== */
-.photo-duo {
-  width: 650px;
-  max-width: 80vw;
-  margin:
-    0 auto
-    150px;
-  display: grid;
-  grid-template-columns:
-    1fr 1fr;
-  gap: 50px;
-  align-items: start;
-}
-.photo-entry-small .entry-image {
-  aspect-ratio: 4 / 5;
-  width: 100%;
-  overflow: hidden;
-}
+
+
 /* ==================================================
    FOOTER
    ================================================== */
+
 .photos-footer {
+
   max-width: 900px;
+
   margin: 0 auto;
+
   padding:
     15px 0
     40px;
+
   border-top:
     1px solid
     rgba(48, 39, 43, 0.3);
+
   display: flex;
+
   justify-content: space-between;
+
   color: var(--muted);
+
   font-size: 9px;
+
   letter-spacing: 0.08em;
+
   text-transform: uppercase;
+
 }
+
+
 /* ==================================================
    MOBILE
    ================================================== */
+
 @media (max-width: 700px) {
+
+
   /* ---------- HEADER ---------- */
+
   .photos-header {
+
     grid-template-columns:
       1fr auto;
+
   }
+
+
   .header-title {
+
     display: none;
+
   }
+
+
   /* ---------- INTRO ---------- */
+
   .photos-intro {
+
     margin-top: 100px;
+
     margin-bottom: 90px;
+
   }
+
+
   .photos-intro h1 {
+
     font-size: 62px;
+
   }
+
+
   /* ---------- PHOTOS ---------- */
-  .photo-entry-large,
-  .photo-entry:nth-of-type(1),
-  .photo-entry:nth-of-type(2),
-  .photo-entry:nth-of-type(3),
-  .photo-entry:nth-of-type(4) {
-    width: 78vw;
+
+  .photo-01,
+  .photo-02,
+  .photo-03,
+  .photo-04 {
+
+    width: 82vw;
+
     max-width: none;
-    transform: none;
+
     margin-left: auto;
+
     margin-right: auto;
-    margin-bottom: 100px;
+
+    margin-bottom: 110px;
+
   }
-  .photo-entry-large .entry-image {
-    aspect-ratio: 4 / 3;
-  }
+
+
   /* ---------- TEXTE ---------- */
-  .entry-text {
+
+  .photo-text {
+
     max-width: 90%;
-    margin-top: 16px;
+
+    margin-top: 14px;
+
   }
-  .entry-text h2 {
+
+
+  .photo-text h2 {
+
     font-size: 18px;
+
   }
-  .entry-text p {
+
+
+  .photo-text p {
+
     font-size: 13px;
+
   }
-  /* ---------- PLUSIEURS PHOTOS ---------- */
-  .entry-images {
+
+
+  /* ---------- NOUVEL AN ---------- */
+
+  .photo-images {
+
     grid-template-columns:
       1fr;
+
     gap: 10px;
+
   }
-  .entry-images.two {
-    grid-template-columns:
-      1fr;
-  }
-  .entry-images img {
-    aspect-ratio: 4 / 3;
-  }
-  /* ---------- DUO ---------- */
-  .photo-duo {
-    width: 78vw;
-    max-width: none;
-    grid-template-columns:
-      1fr;
-    gap: 70px;
-    margin-bottom: 100px;
-  }
-  .photo-entry-small .entry-image {
-    aspect-ratio: 4 / 5;
-  }
+
+
   /* ---------- FOOTER ---------- */
+
   .photos-footer {
+
     margin-top: 40px;
+
   }
+
 }
