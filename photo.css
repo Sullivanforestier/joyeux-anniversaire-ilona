@@ -1,0 +1,327 @@
+/* ==================================================
+   PHOTOGRAPHIES — ILONA
+   ================================================== */
+
+
+/* ---------- PAGE ---------- */
+
+.photos-page {
+  min-height: 100vh;
+
+  padding:
+    clamp(24px, 4vw, 60px)
+    clamp(20px, 5vw, 70px);
+
+  background: var(--background);
+}
+
+
+/* ---------- HEADER ---------- */
+
+.photos-header {
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  width: 100%;
+
+  font-size: 10px;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.photos-header .back {
+  justify-self: start;
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  transition: opacity 0.2s ease;
+}
+
+.photos-header .back:hover {
+  opacity: 0.5;
+}
+
+.header-title {
+  justify-self: center;
+
+  font-weight: 600;
+}
+
+.header-info {
+  justify-self: end;
+
+  color: var(--muted);
+}
+
+
+/* ---------- INTRO ---------- */
+
+.photos-intro {
+  max-width: 900px;
+
+  margin:
+    clamp(100px, 16vh, 190px)
+    auto
+    clamp(100px, 15vh, 170px);
+}
+
+.eyebrow {
+  margin-bottom: 20px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.photos-intro h1 {
+  font-size: clamp(58px, 10vw, 130px);
+
+  font-weight: 400;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.06em;
+}
+
+.intro-text {
+  margin-top: 35px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* ==================================================
+   ENTRÉES
+   ================================================== */
+
+
+/* ---------- GRANDE PHOTO ---------- */
+
+.photo-entry-large {
+  max-width: 1200px;
+
+  margin:
+    0 auto
+    clamp(140px, 20vw, 260px);
+}
+
+.photo-entry-large .entry-image {
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+}
+
+
+/* ---------- IMAGE ---------- */
+
+.entry-image {
+  background: rgba(48, 39, 43, 0.08);
+}
+
+.entry-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+.entry-image:hover img {
+  transform: scale(1.015);
+}
+
+
+/* ---------- INFO ---------- */
+
+.entry-info {
+  display: grid;
+
+  grid-template-columns: 150px 1fr;
+
+  gap: 30px;
+
+  margin-top: 18px;
+}
+
+.entry-date {
+  color: var(--muted);
+
+  font-size: 10px;
+
+  letter-spacing: 0.08em;
+}
+
+.entry-text {
+  max-width: 500px;
+}
+
+.entry-info h2 {
+  margin-bottom: 8px;
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+  letter-spacing: -0.02em;
+}
+
+.entry-info p {
+  color: var(--muted);
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+
+/* ==================================================
+   DUO
+   ================================================== */
+
+.photo-duo {
+  max-width: 1050px;
+
+  margin:
+    0 auto
+    clamp(140px, 20vw, 260px);
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: clamp(25px, 6vw, 100px);
+
+  align-items: start;
+}
+
+
+/* ---------- PETITES ENTRÉES ---------- */
+
+.photo-entry-small .entry-image {
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+}
+
+.photo-entry-small .entry-info {
+  display: block;
+
+  margin-top: 15px;
+}
+
+.photo-entry-small .entry-date {
+  margin-bottom: 14px;
+}
+
+.photo-entry-small h2 {
+  margin-bottom: 8px;
+}
+
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+.photos-footer {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding:
+    15px 0
+    40px;
+
+  border-top:
+    1px solid
+    rgba(48, 39, 43, 0.3);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: var(--muted);
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 700px) {
+
+  .photos-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .header-title {
+    display: none;
+  }
+
+  .photos-intro {
+    margin-top: 100px;
+    margin-bottom: 90px;
+  }
+
+  .photos-intro h1 {
+    font-size: 62px;
+  }
+
+  .photo-entry-large {
+    margin-bottom: 120px;
+  }
+
+  .photo-entry-large .entry-image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .entry-info {
+    display: block;
+  }
+
+  .entry-date {
+    margin-bottom: 14px;
+  }
+
+  .photo-duo {
+    grid-template-columns: 1fr;
+
+    gap: 80px;
+
+    margin-bottom: 120px;
+  }
+
+  .photo-entry-small .entry-image {
+    aspect-ratio: 4 / 5;
+  }
+
+}
