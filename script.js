@@ -3,81 +3,90 @@
 // ==========================================
 
 
-// ---------- ANIMATION DU TEXTE ----------
-
-const letters = document.querySelectorAll(".birthday span");
-
-letters.forEach((letter, index) => {
-
-  setTimeout(() => {
-    letter.classList.add("visible");
-  }, 500 + index * 55);
-
-});
-
-
 // ---------- BOUTON ENTRER ----------
 
-const enterButton = document.getElementById("enterButton");
-const home = document.querySelector(".home");
+const enterButton =
+  document.getElementById("enterButton");
 
-enterButton.addEventListener("click", () => {
-
-  home.classList.add("exit");
-
-  setTimeout(() => {
-    window.location.href = "photos.html";
-  }, 700);
-
-});
+const home =
+  document.querySelector(".home");
 
 
-// ---------- CONFETTIS ----------
+if (enterButton && home) {
 
-const confettiContainer = document.createElement("div");
+  enterButton.addEventListener("click", () => {
 
-confettiContainer.className = "confetti-container";
+    home.classList.add("exit");
 
-document.body.appendChild(confettiContainer);
+    setTimeout(() => {
 
+      window.location.href = "photos.html";
 
-const confettiCharacters = [
-  "✦",
-  "·",
-  "✧",
-  "✿",
-  "♡",
-  "＋"
-];
+    }, 800);
+
+  });
+
+}
 
 
-for (let i = 0; i < 35; i++) {
+// ==========================================
+// CONFETTIS
+// ==========================================
 
-  const confetti = document.createElement("span");
+const confettiContainer =
+  document.getElementById("confetti-container");
 
-  confetti.className = "confetti";
 
-  confetti.textContent =
-    confettiCharacters[
-      Math.floor(
-        Math.random() * confettiCharacters.length
-      )
-    ];
+const confettiCount = 90;
+
+
+for (let i = 0; i < confettiCount; i++) {
+
+  const confetti =
+    document.createElement("div");
+
+  confetti.classList.add("confetti");
+
+
+  // Taille aléatoire
+
+  const width =
+    Math.random() * 9 + 5;
+
+  const height =
+    Math.random() * 5 + 4;
+
+
+  confetti.style.width =
+    `${width}px`;
+
+  confetti.style.height =
+    `${height}px`;
+
+
+  // Position horizontale aléatoire
 
   confetti.style.left =
-    Math.random() * 100 + "%";
+    `${Math.random() * 100}vw`;
 
-  confetti.style.top =
-    Math.random() * 100 + "%";
 
-  confetti.style.animationDelay =
-    Math.random() * 2 + "s";
+  // Vitesse de chute aléatoire
 
   confetti.style.animationDuration =
-    3 + Math.random() * 4 + "s";
+    `${Math.random() * 4 + 4}s`;
 
-  confetti.style.fontSize =
-    7 + Math.random() * 9 + "px";
+
+  // Décalage pour que tout ne tombe pas en même temps
+
+  confetti.style.animationDelay =
+    `${Math.random() * -8}s`;
+
+
+  // Opacité légèrement différente
+
+  confetti.style.opacity =
+    `${Math.random() * 0.5 + 0.35}`;
+
 
   confettiContainer.appendChild(confetti);
 
