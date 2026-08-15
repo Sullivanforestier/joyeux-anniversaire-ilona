@@ -1,7 +1,9 @@
 /* ==================================================
    PHOTOGRAPHIES — ILONA
    ================================================== */
-/* ---------- PAGE ---------- */
+/* ==================================================
+   PAGE
+   ================================================== */
 .photos-page {
   min-height: 100vh;
   padding:
@@ -76,46 +78,46 @@
   width: 100%;
 }
 /* ==================================================
-   PHOTOS PRINCIPALES
+   PHOTO 1
    ================================================== */
-/*
-   Les photos sont volontairement beaucoup plus petites
-   et chaque entrée possède une largeur différente.
-*/
 .photo-entry-large {
-  width: min(62vw, 680px);
+  width: 460px;
+  max-width: 60vw;
   margin:
     0 auto
-    clamp(110px, 16vw, 190px);
-}
-/* ---------- VARIATIONS ---------- */
-/* Première photo : petite et légèrement à gauche */
-.photo-entry:nth-of-type(1) {
-  width: min(50vw, 520px);
-  transform: translateX(-8%);
-}
-/* Deuxième : moyenne et à droite */
-.photo-entry:nth-of-type(2) {
-  width: min(58vw, 610px);
-  transform: translateX(8%);
-}
-/* Troisième : petite et franchement décalée */
-.photo-entry:nth-of-type(3) {
-  width: min(46vw, 480px);
-  transform: translateX(-12%);
-}
-/* Quatrième : un peu plus grande */
-.photo-entry:nth-of-type(4) {
-  width: min(60vw, 650px);
-  transform: translateX(5%);
+    150px;
 }
 /* ==================================================
-   IMAGE UNIQUE
+   VARIATIONS DE TAILLE
+   ================================================== */
+/*
+   On utilise ici les classes d'entrée directement.
+   Les photos ne prennent donc plus toute la largeur.
+*/
+.photo-entry:nth-of-type(1) {
+  width: 400px;
+  transform: translateX(-70px);
+}
+.photo-entry:nth-of-type(2) {
+  width: 500px;
+  transform: translateX(80px);
+}
+.photo-entry:nth-of-type(3) {
+  width: 370px;
+  transform: translateX(-100px);
+}
+.photo-entry:nth-of-type(4) {
+  width: 450px;
+  transform: translateX(50px);
+}
+/* ==================================================
+   IMAGE
    ================================================== */
 .entry-image {
   width: 100%;
   overflow: hidden;
-  background: rgba(48, 39, 43, 0.08);
+  background:
+    rgba(48, 39, 43, 0.08);
 }
 .photo-entry-large .entry-image {
   aspect-ratio: 4 / 3;
@@ -132,10 +134,10 @@
   transform: scale(1.015);
 }
 /* ==================================================
-   TEXTE SOUS LES PHOTOS
+   TEXTE
    ================================================== */
 .entry-text {
-  max-width: 430px;
+  max-width: 400px;
   margin-top: 16px;
 }
 .entry-text h2 {
@@ -156,8 +158,9 @@
    ================================================== */
 .entry-images {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(8px, 2vw, 16px);
+  grid-template-columns:
+    repeat(3, 1fr);
+  gap: 12px;
   width: 100%;
 }
 .entry-images img {
@@ -165,7 +168,8 @@
   aspect-ratio: 1 / 1;
   display: block;
   object-fit: cover;
-  background: rgba(48, 39, 43, 0.08);
+  background:
+    rgba(48, 39, 43, 0.08);
   transition:
     transform 0.7s ease;
 }
@@ -176,19 +180,22 @@
    DEUX PHOTOS
    ================================================== */
 .entry-images.two {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    1fr 1fr;
 }
 /* ==================================================
-   PETIT DUO
+   DUO
    ================================================== */
 .photo-duo {
-  max-width: 850px;
+  width: 650px;
+  max-width: 80vw;
   margin:
     0 auto
-    clamp(110px, 16vw, 190px);
+    150px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(25px, 5vw, 70px);
+  grid-template-columns:
+    1fr 1fr;
+  gap: 50px;
   align-items: start;
 }
 .photo-entry-small .entry-image {
@@ -221,7 +228,8 @@
 @media (max-width: 700px) {
   /* ---------- HEADER ---------- */
   .photos-header {
-    grid-template-columns: 1fr auto;
+    grid-template-columns:
+      1fr auto;
   }
   .header-title {
     display: none;
@@ -240,8 +248,11 @@
   .photo-entry:nth-of-type(2),
   .photo-entry:nth-of-type(3),
   .photo-entry:nth-of-type(4) {
-    width: 82vw;
+    width: 78vw;
+    max-width: none;
     transform: none;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 100px;
   }
   .photo-entry-large .entry-image {
@@ -260,18 +271,23 @@
   }
   /* ---------- PLUSIEURS PHOTOS ---------- */
   .entry-images {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
     gap: 10px;
   }
   .entry-images.two {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
   .entry-images img {
     aspect-ratio: 4 / 3;
   }
   /* ---------- DUO ---------- */
   .photo-duo {
-    grid-template-columns: 1fr;
+    width: 78vw;
+    max-width: none;
+    grid-template-columns:
+      1fr;
     gap: 70px;
     margin-bottom: 100px;
   }
