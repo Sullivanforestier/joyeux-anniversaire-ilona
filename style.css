@@ -235,5 +235,95 @@ body {
   .footer {
     font-size: 8px;
   }
+/* ==========================================
+   CONFETTIS
+   ========================================== */
 
+.confetti-container {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 0;
+}
+
+.confetti {
+  position: absolute;
+
+  color: rgba(48, 39, 43, 0.25);
+
+  opacity: 0;
+
+  animation:
+    confettiFloat
+    4s
+    ease-in-out
+    infinite;
+}
+
+@keyframes confettiFloat {
+
+  0% {
+    opacity: 0;
+    transform:
+      translateY(10px)
+      rotate(0deg);
+  }
+
+  25% {
+    opacity: 0.6;
+  }
+
+  75% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translateY(-50px)
+      rotate(180deg);
+  }
+
+}
+
+
+/* ==========================================
+   TEXTE ANNIVERSAIRE
+   ========================================== */
+
+.birthday {
+  position: relative;
+
+  z-index: 2;
+
+  /*
+    Évite que le navigateur coupe
+    "Ilona" entre les lettres.
+  */
+
+  white-space: normal;
+}
+
+.birthday span {
+  white-space: nowrap;
+}
+
+
+/* ==========================================
+   CONTENU AU-DESSUS DES CONFETTIS
+   ========================================== */
+
+.header,
+.welcome,
+.footer {
+  position: relative;
+
+  z-index: 2;
+}
+   
 }
