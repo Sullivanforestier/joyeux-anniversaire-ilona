@@ -306,7 +306,9 @@ body {
     "Ilona" entre les lettres.
   */
 
-  white-space: normal;
+.name {
+  white-space: nowrap;
+}
 }
 
 .birthday span {
